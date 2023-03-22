@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BuildCD" representedClassName="BuildCD" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="imageAttached" optional="YES" attributeType="Binary"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="occuredOn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tag" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseCD" inverseName="expanseBuild" inverseEntity="ExpenseCD"/>
+    </entity>
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="ExpenseCD" representedClassName=".ExpenseCD" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="amount2" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="amount3" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="imageAttached" optional="YES" attributeType="Binary"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="numberOfDays" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="occuredOn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="occuredTo" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="paidIs" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tag" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="expanseBuild" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BuildCD" inverseName="relationship" inverseEntity="BuildCD"/>
+        <relationship name="expanseWorker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkerCD" inverseName="relationship" inverseEntity="WorkerCD"/>
+    </entity>
+    <entity name="WorkerCD" representedClassName="WorkerCD" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="imageAttached" optional="YES" attributeType="Binary"/>
+        <attribute name="monthly" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="occuredOn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <attribute name="tag" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="workAgreement" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseCD" inverseName="expanseWorker" inverseEntity="ExpenseCD"/>
+    </entity>
+    <elements>
+        <element name="BuildCD" positionX="-54" positionY="72" width="128" height="164"/>
+        <element name="Entity" positionX="-54" positionY="117" width="128" height="29"/>
+        <element name="ExpenseCD" positionX="-63" positionY="-9" width="128" height="269"/>
+        <element name="WorkerCD" positionX="-63" positionY="63" width="128" height="209"/>
+    </elements>
+</model>
